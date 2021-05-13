@@ -303,12 +303,16 @@ img {
               <!-- <p>Connection status: <span id="status"></span></p>-->
               <p>Last /txt_msg received:<span id="msg"></span></p>
                 <img src="" id="img"width="100px" height="100px">
-                <div style=" width:200px; height:100px;display: none;" id="graph-im"> <div id="vel" ></div> </div>
+                <div class="container">
+                
+              </div>
                 <!---->
                
                 
           </div>
           <div id="zone_joystick" style="position: fixed; right: 200px; bottom: 200px;"></div>
+
+          <div style=" width:200px; height:100px;display: none;position: relative;" id="graph-im"> <div id="vel" ></div> </div>
           <script type="text/javascript" src="telaop.js">
           </script>
         </div>
@@ -316,6 +320,11 @@ img {
         
            
  <script>
+   setInterval(function(){ console.log($("#nav-content").style.display) }, 3000);
+   function gun(){
+     console.log("ssss")
+     document.getElementById("graph-im").style.display="none"
+   }
    var sw=true
 function switch_page(){
   sw = !sw
@@ -381,8 +390,10 @@ var ros = new ROSLIB.Ros({
        listX.shift()
        listY.shift() 
       }
-      trace1["x"]=listX
-          trace1["y"]=listY
+      trace1["y"]=listX
+      trace2["y"]=listY
+      //trace1["x"]=new Date().getMilliseconds();
+      //trace2["x"]=new Date().getMilliseconds();
 
 
         var data = [trace1, trace2];
@@ -451,33 +462,33 @@ var ros = new ROSLIB.Ros({
         }
 
       var trace1 = {
-        x: [1, 2, 3, 4,],
-        y: [0.1, 0.2, 0.3, 0.4,],
+        x: [1, 2, 3, 4, 5],
+        y: [],
         mode: 'lines+markers',
         marker: {
-          color: 'rgb(255, 255, 255)',
-          size: 5
+          color: 'rgb(255, 211, 0)',
+          size: 6
                 },
           line: {
-          color: 'rgb(255, 255, 255)',
-          width: 2
+          color: 'rgb(255, 211, 0)',
+          width: 3
                 },
-        name: 'Right'
+        name: 'Linear'
       };
       
       var trace2 = {
-        x: [1, 2, 3, 4],
-        y: [-1, 0.2, 0.3, 0.4,],
+        x: [1, 2, 3, 4, 5],
+        y: [],
         mode: 'lines+markers',
         marker: {
-          color: 'rgb(255, 255, 255)',
-          size: 5
+          color: 'rgb(128, 166, 206)',
+          size: 6
                 },
           line: {
-          color: 'rgb(255, 255, 255)',
-          width: 2
+          color: 'rgb(128, 166, 206)',
+          width: 3
                 },
-        name: 'Left'
+        name: 'Angular'
       };
       
       var data = [trace1, trace2];
@@ -486,14 +497,14 @@ var ros = new ROSLIB.Ros({
         width: 1200,
         height: 500,
         title: {
-        text: 'Velocity Per Graph',
+        text: 'Velocity',
         font: {
         size: 24,
-        color: 'white'
+        color: 'black'
           }
         },
-        plot_bgcolor:"#455559",
-        paper_bgcolor:"#455559",
+        plot_bgcolor:"#C5C6D0",
+        paper_bgcolor:"#C5C6D0",
       };
       
       Plotly.newPlot('vel', data, layout);
