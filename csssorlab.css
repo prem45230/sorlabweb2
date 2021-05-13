@@ -1,0 +1,43 @@
+  
+    .button_nav {
+    border: none;
+    color: white;
+    padding: 70px 90px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    transition:all 1 ease;
+    border-radius:20px;
+    font-size: 50px;
+    cursor: pointer;
+  }
+  .button_nav:hover {
+    opacity: 0.6;
+  }
+
+    .button1 {background-color: #d36600;
+                position: absolute;
+                top: 200px; left: 500px;}
+    .button2 {background-color: #d36600;
+                position: absolute;
+                top: 200px; left: 800px;}
+    .button3 {background-color: #d36600;
+                position: absolute;
+                top: 200px; left: 1100px;}
+    .button4 {background-color: #d36600;
+                position: absolute;
+                top: 200px; left: 1400px;}
+    .button5 {background-color: #d36600;
+                position: absolute;
+                top: 500px; left: 500px;}
+    .button6 {background-color: #d36600;
+                position: absolute;
+                top: 500px; left: 800px;}
+    .button7 {background-color: #d36600;
+                position: absolute;
+                top: 500px; left: 1100px;}
+    .button8 {background-color: #d36600;
+                position: absolute;
+                top: 500px; left: 1400px;}
+
+
